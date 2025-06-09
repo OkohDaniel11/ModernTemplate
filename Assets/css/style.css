@@ -1,0 +1,892 @@
+/* ============
+    body css styles 
+    ===========*/
+
+body {
+    padding: 0;
+    background-color: #f2f2f2;
+    font-family: "Agdasima", sans-serif;
+}
+
+/* ============
+    container section style
+    ===========*/
+
+.TopSection {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ============
+    Start of Header 
+    ===========*/
+
+.TopSection header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    display: flex;
+    border-bottom: 0.5px solid white;
+    overflow: hidden;
+    z-index: 99999;
+    padding:0;
+}
+
+header nav {
+    width: 100%;
+}
+
+.nav-hover {
+    position: relative;
+    height: 100px;
+}
+
+.nav-hover span {
+    position: relative;
+    top: 16px;
+    left: 0.5%;
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.8s ease-in-out;
+    display: inline-block;
+    
+}
+
+.nav-hover .menu {
+    border-bottom: 4px solid white;
+    text-align: start;
+    width: 10%;
+}
+
+.nav-hover .right {
+    position: relative;
+    top: 6px;
+    left: 80%;
+}
+
+/* ============
+    Start Of Nav Bar
+    ===========*/
+
+.navs {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(200%);
+    transition: 0.8s ease-in-out;
+    width: 100%;
+}
+
+.nav-hover:hover span {
+    transform: translateY(-200%);
+}
+
+.nav-hover:hover .navs {
+    transform: translateY(0); /* Match height of header/nav */
+}
+
+.navs li {
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.navs li a {
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 0 5px;
+    width: 100%;
+    display: inline-block;
+}
+
+.navs li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: width 0.4s ease-in-out;
+}
+
+.navs li:hover::before {
+    width: 100%;
+}
+
+.navs li:hover a{
+    color: black; /* Optional: keep text color same or change */
+}
+
+header.scrolled {
+    background-color: white;
+    color: black;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in;
+}
+
+header.scrolled .navs li::before {
+    background-color: black;
+}
+
+header.scrolled .nav-hover span {
+    color: black;
+}
+
+header.scrolled .navs li:hover a {
+    color: white;
+}
+/* Scrolled state (text turns black) */
+header.scrolled .navs li a {
+  color: black;
+}
+
+/* Scrolled + hover: invert text to white */
+header.scrolled .navs li:hover a {
+  color: white !important;
+}
+
+/* ============
+    End Of Nav Bar
+    ===========*/
+
+/* ============
+    Start Of Video Section
+    ===========*/
+
+.videoSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+/* ============
+    Start of Video
+    ===========*/
+
+.videoSection::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3); /* Adjust darkness */
+    z-index: 1;
+}
+
+
+.videoSection video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* ensures it fills and crops as needed */
+    object-position: center;
+    position: relative;
+    z-index: 0;
+}
+
+/* ============
+    End of video
+    ===========*/
+
+/* ============
+    ===========*/
+
+.videoHeader {
+    z-index: 100;
+    position: absolute;
+    top: 0%;
+    left: 2%;
+    padding: 10px;
+}
+
+.videoHeader h1 {
+    color: white;
+    font-size: 220px;
+    font-weight: 900;
+    text-align: justify;
+    text-transform: uppercase;
+    font-family: "Zen Tokyo Zoo", system-ui;
+    /*font-family: "Chango", sans-serif;*/
+}
+
+.videoHeader p {
+    color: white;
+    font-size: 35px;
+    position: relative;
+    width: 60%;
+    opacity: 0.8;
+    bottom: 230px;
+}
+
+/* ============
+    ===========*/
+
+/* ============
+    ===========*/
+
+.videoButton {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    width: 20%;
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    color: white;
+    z-index: 100;
+}
+
+.videoButton a {
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 40px;;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    right: 16%;
+    bottom: 40px;
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+    backdrop-filter: blur(5px); /* blur behind the element */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    font-family: "Wire One", sans-serif;
+    overflow: hidden;
+}
+
+.videoButton a .one {
+    transform: translateX(200%);
+    transition: 0.3s ease-in-out;
+    font-size: 25px;
+}
+
+.videoButton a:hover .one {
+    transform: translateX(0);
+}
+
+/* ============
+    ===========*/
+
+
+.topContent {
+    height: 100vh;
+    width:  100%;
+    overflow: hidden;
+}
+
+.tpHeader h2 {
+    font-size: 80px;
+    opacity: 0.6;
+    position: relative;
+    left: 52%;
+    top: 100px;
+}
+
+.tpHeader p {
+    font-size: 50px;
+    width: 45%;
+    position: relative;
+    top: 70px;
+    left: 52%;
+}
+
+.tpButton {
+    position: relative;
+    left: 52%;
+    top: 90px;
+    overflow: hidden;
+}
+
+.tpButton button {
+    overflow: hidden;
+    background-color: transparent;
+    font-size: 40px;
+    height: 60px;
+    padding: 0;
+    cursor: pointer;
+    font-family: "Wire One", sans-serif;
+}
+
+.tpButton button .shownON {
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.tpButton button .showntO {
+    z-index: 10;
+    position: absolute;
+    top: 1px;
+    left: 0%;
+    transform: translateY(200%);
+    background-color: white;
+    color: black;
+    height: 100%;
+    padding: 15px 2px;
+    transition: 0.5s ease-in-out;
+}
+
+.tpButton button:hover .showntO {
+    transform: translateY(0);
+}
+
+.MiddleContent {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.MiddleContent h2 {
+    font-size: 120px;
+    text-transform: capitalize;
+    padding: 0 15px;
+    opacity: 0.8;
+}
+
+.deptContainer .innerBorder {
+    border-top: 0.7px solid black;
+    padding: 10px 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.innerheader {
+    height: 100px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.hoverGroup {
+    height: 120px;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    position: relative;
+}
+
+.hoverGroup:hover {
+    height: 180px;  /*Adjust based on .hoverBrands height */
+}
+
+.hoverGroup h2 {
+    position: relative;
+    top: 30px;
+    font-size: 55px;
+    margin: 0;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.hoverGroup:hover h2 {
+    transform: translateY(-200%);
+}
+
+.hoverBrands {
+    display: flex;
+    gap: 2%;
+    width: max-content;
+    transition:  0.5s ease-in-out;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+   
+}
+
+.hoverGroup:hover .hoverBrands {
+    top: -65px;
+}
+
+.hoverBrands div {
+    height: 160px;
+    width: 260px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 85px;
+}
+
+.hoverBrands img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.scroll {
+    animation: scrollX 20s linear infinite;
+    animation-play-state: paused; /* Start paused */
+}
+
+.hoverVisuals {
+    display: flex;
+    gap: 2%;
+    width: max-content;
+    transition:  0.5s ease-in-out;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+   
+}
+
+.hoverGroup:hover .hoverVisuals {
+    top: -65px;
+    animation: scrollX 40s linear infinite;
+    animation-play-state: running;
+}
+
+.hoverVisuals div {
+    height: 160px;
+    width: 260px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 85px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.hoverVisuals img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hoverGroup:hover .hoverVisuals {
+  animation-play-state: running;
+}
+
+.hoverVisuals div:hover {
+    cursor: pointer;
+}
+
+
+/* Horizontal scroll animation keyframes */
+@keyframes scrollX {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hoverGroup:hover .hoverBrands {
+  animation-play-state: running;
+}
+
+
+
+/* Parent container */
+.linearBorder {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    border-top: 0.7px solid black;
+    transition: height 0.5s ease-in-out;
+}
+
+/* dropGroup - collapsed state */
+.dropGroup {
+    height: 80px; /* collapsed height */
+    display: flex;
+    justify-content: center;
+    gap: 50%;
+    width: 100%;
+}
+
+.linearBorder.expanded {
+    height: 500px; /* desired expanded height */
+}
+
+
+/* dropheader styling */
+.dropheader {
+    height: 100px;
+    width: 100%;
+}
+
+/* h2 styles */
+.dropGroup h2 {
+    font-size: 55px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    bottom: 15px;
+    z-index: 400;
+}
+
+.dropGroup h2:hover {
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
+/* paragraph styling */
+.dropGroup p {
+    font-size: 25px;
+    position: relative;
+    left: 2%;
+}
+
+/* iframe container */
+.dropId {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.3s ease, transform 0.5s ease;
+    position: relative;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+/* iframe styles */
+.dropId iframe {
+    position: relative;
+    left: -50%;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* When expanded: show iframe */
+.linearBorder.expanded .dropId {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bottomContent {
+    width: 100%;
+    position: relative;
+}
+
+.bottomContent main {
+    background-color: black;
+    position: relative;
+    top: 450px;
+    width: 100%;
+}
+
+.bottomHeader {
+    color: white;
+    position: relative;
+    top: 180px;
+    left: 5%;
+    width: 50%;
+}
+
+.bottomHeader h2 {
+    font-size: 80px;
+}
+
+.bottomHeader p {
+    width: 85%;
+    font-size: 40px;
+}
+
+.articleCont {
+    width: 100%;
+    overflow: hidden;
+    height: 3700px;
+}
+
+.ImageContent {
+    height: 400px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.ImageContent .zoomImage {
+    overflow: hidden;
+    border: 1px solid white;
+    border-radius: 30px;
+    
+}
+
+.uno {
+    position: relative;
+    top: 400px;
+    left: 40%;
+    height: 300px;
+    width: 350px;
+}
+
+.dos {
+    position: relative;
+    top: 400px;
+    left: 40%;
+    height: 500px;
+    width: 500px;
+}
+
+.tres {
+    position: relative;
+    top: 800px;
+    right: 48%;
+    height: 500px;
+    width: 800px;
+}
+
+.cuatro {
+    position: relative;
+    top: 1220px;
+    left: 23%;
+    height: 500px;
+    width: 700px;
+}
+
+.cinco {
+    position: relative;
+    top: 1220px;
+    left: 23%;
+    height: 500px;
+    width: 700px;
+}
+
+.seis {
+    position: relative;
+    top: 1620px;
+    left: -14%;
+    height: 580px;
+    width: 1000px;
+}
+
+
+.writtenInfo {
+    position: relative;
+    top: 830px;
+    left: 55%;
+    width: 50%;
+}
+
+.writtenInfo h2{
+    color: white;
+    font-size: 88px;
+    text-transform: capitalize;
+}
+
+.writtenInfo p {
+    font-size: 30px;
+    width: 95%;
+    color: white;
+}
+
+
+.zoomImage::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.027); /* black overlay with 50% opacity */
+  pointer-events: none; /* so it doesn't block clicks */
+}
+
+
+.zoomImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.zoomImage div {
+    display: flex;
+    gap: 2%;
+    color: white;
+    position: relative;
+    top: -60px;
+    left: 2%;
+    z-index: 2;
+}
+
+.zoomImage div span {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 50px;
+    text-transform: capitalize;
+}
+
+.BottomVideo {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 450px;
+}
+
+.BottomVideo video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(50%);
+}
+
+.videoText {
+    position: absolute;
+    top: 42%;
+    left: 38%;
+    z-index: 100;
+}
+
+.videoText a {
+    color: white;
+    font-size: 110px;
+    text-decoration: none;
+    font-family: "Wire One", sans-serif;
+    opacity: 0;
+    position: relative;
+}
+
+.videoText a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: rgba(255, 254, 254, 1); /* semi-transparent overlay */
+    z-index: -1; /* behind the text */
+}
+
+.videoText a:hover::before {
+    width: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+.BottomVideo:hover .videoText a {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.videoIcons {
+    display: flex;
+    gap: 5%;
+    z-index: 100;
+    position: absolute;
+    bottom: 15px;
+    left: 65%;
+    width: 100%;
+}
+
+.videoIcons span {
+    color: white;
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+footer {
+     height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5rem;
+    color: white;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 10%;
+    position: absolute;
+    top:  94%;
+    left: 40%;
+}
+
+.socialLinks a {
+    color: white;
+    font-size: 50px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    border: white 1px solid;
+    padding: 10px 20px;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.socialLinks a span {
+    position: absolute;
+    bottom: 100%; /* Places it just above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    opacity: 0;
+
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 28px;
+    font-style: "Agdasima";
+    font-weight: 100;
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.socialLinks a:hover {
+    border: black 1px solid;
+}
+
+.socialLinks a:hover span {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.face:hover {
+    background-color: #3b5998;
+}
+.insta:hover {
+    background: linear-gradient(
+        to right,
+        #833ab4,#fd1d1d,#fcb045
+    );
+}
+.tweet:hover {
+    background-color: #14171A;
+}
+.linke:hover {
+    background-color: #0e76a8;
+}
+
+
+.face span {
+    background-color: inherit;
+}
+.insta span {
+    background: inherit;
+}
+.tweet span {
+    background-color: inherit;
+}
+.linke span {
+    background-color: inherit;
+}
+
+.backTop button {
+    background-color: transparent;
+    border: none;
+    font-size: 80px;
+    font-family: "Wire One", sans-serif;
+    cursor: pointer;
+    text-transform: capitalize;
+}
